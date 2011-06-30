@@ -1,8 +1,3 @@
-Cufon.replace('h1,p,.b-counter', {fontFamily:'times'});
-Cufon.replace('.book_wrapper a', {hover:true});
-Cufon.replace('.title', {textShadow: '1px 1px #C59471', fontFamily:'ChunkFive'});
-Cufon.replace('.reference a', {textShadow: '1px 1px #C59471', fontFamily:'ChunkFive'});
-Cufon.replace('.loading', {textShadow: '1px 1px #000', fontFamily:'ChunkFive'});
 
 $(function() {
 	var $mybook 		= $('#mybook');
@@ -70,7 +65,6 @@ $(function() {
 					before:             function(){},                    // callback invoked before each page turn animation
 					after:              function(){}                     // callback invoked after each page turn animation
 				});
-				Cufon.refresh();
 			}
 		}).attr('src',source);
 	});
