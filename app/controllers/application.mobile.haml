@@ -1,0 +1,19 @@
+%html{html_attrs}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title= yield(:title) || "Untitled"
+    = stylesheet_link_tag "/jqtouch.min.css", "/themes/apple/theme.min.css"
+    = javascript_include_tag "/jquery.js", "/jqtouch.min.js", 'mobile'
+    = yield(:head)
+  %body
+    .current
+      - if show_title?
+        .toolbar
+          %h1= h yield(:title)
+          = link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
+          = yield(:toolbar)
+      - unless flash.empty?
+        .info
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}"
+      = yield
